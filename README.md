@@ -34,4 +34,4 @@
 * [Noopur's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/NOOPURJOSHI_SIMPLICITY.md)
 
 ### Communication
-* [Dhanashree's Journal] (https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Communication_Dhanashree_Gaonkar.md)
+* [Dhanashree's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Communication_Dhanashree_Gaonkar.md)
