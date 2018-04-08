@@ -10,4 +10,4 @@
 
 
 #### References
-[Extreme Programming - Feedback](http://www.extremeprogramming.org/values.html)
+[Extreme Programming](http://www.extremeprogramming.org/values.html)
