@@ -8,9 +8,9 @@
 
 ## Project Modules
 * [Kong Gateway - Miraj](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
-* [Login/Signup - Anisha]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/LoginSignup.md))
-* [Order/Checkout - Noopur]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/OrderCheckout.md))
-* [Payment - Dhanashree]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Payment_Feature_Research.md))
+* [Login/Signup - Anisha](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/LoginSignup.md)
+* [Order/Checkout - Noopur](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/OrderCheckout.md)
+* [Payment - Dhanashree](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Payment_Feature_Research.md)
 * [Frontend - All Members]
 
 ## Kanban Task Board
