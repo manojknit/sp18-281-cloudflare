@@ -3,6 +3,7 @@
 #### 1.  What did the team do the past week?
 
 * Noopur
+	+ Research on which NoSql DB to be used.
      
 * Anisha Vaghela:
 	+ Research on using which NoSQL database in the project.
@@ -17,6 +18,7 @@
 #### 2.  What is the team going to do next week?
 
 * Noopur
+	+ Research on the finalized DB.
      
 * Anisha Vaghela:
 	+ Research on how to deploy the MongoDB database to the cloud.
