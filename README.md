@@ -1,6 +1,6 @@
 # Project Name: Startbucks Simulation
 ## Team Members:
-* Dhanashree
+* Dhanashree Gaonkar
 * Anisha Vaghela
 * Miraj Patel
 * Noopur Joshi
@@ -10,6 +10,7 @@
 * [Kong Gateway - Miraj](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
 * [Login/Signup - Anisha]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/LoginSignup.md))
 * [Order/Checkout - Noopur]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/OrderCheckout.md))
+* [Payment - Dhanashree] (https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Payment_Feature_Research.md)
 * [Frontend - All Members]
 
 ## Kanban Task Board
@@ -32,3 +33,5 @@
 ### Simplicity
 * [Noopur's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/NOOPURJOSHI_SIMPLICITY.md)
 
+### Communication
+* [Dhanashree's Journal(https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Communication_Dhanashree_Gaonkar.md)
