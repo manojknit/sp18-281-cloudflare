@@ -30,7 +30,7 @@
     + Research about how to deploy the kong Gateway (AWS EC2 or docker)
     + Test deployment of the kong and cassandra in AWS EC2
 * Dhanashree
-    +Research on how to model the data for the different usecases in payment module
+    + Research on how to model the data for the different usecases in payment module
 
 #### 3.  What are the current blockers/challenges the team is facing?
 * The exact architecture required for the project
