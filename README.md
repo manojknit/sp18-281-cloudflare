@@ -7,9 +7,8 @@
 
 
 ## Project Modules
-* [Kong Gateway - Miraj](https://github.com/nguyensjsu/team281-cloudflare/projects/1)
+* [Kong Gateway - Miraj](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
 * [Frontend - All Members]
-
 
 ## Kanban Task Board
 * [Link to Task Board](https://github.com/nguyensjsu/team281-cloudflare/projects/1)
