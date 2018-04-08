@@ -23,4 +23,4 @@
 ## Agile Core Values
 
 ### Eliminate Waste
-* [Miraj's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/VALUES_MIRAJP1_ELIMINATE_WASTE.md)
+* [Miraj's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/MIRAJP1_ELIMINATE_WASTE.md)
