@@ -8,6 +8,7 @@
 
 ## Project Modules
 * [Kong Gateway - Miraj](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
+* [Login/Signup - Anisha]((https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/LoginSignup.md))
 * [Frontend - All Members]
 
 ## Kanban Task Board
@@ -23,3 +24,7 @@
 
 ### Eliminate Waste
 * [Miraj's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/MIRAJP1_ELIMINATE_WASTE.md)
+
+### Feedback
+* [Anisha's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/VAGHELAANISHA_FEEDBACK.md)
+

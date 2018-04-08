@@ -5,6 +5,8 @@
 * Noopur
      
 * Anisha Vaghela:
+	+ Research on using which NoSQL database in the project.
+	+ Research on advantages and disadvantages of using MongoDB for login/signup system.
       
 * Miraj Patel:
     + Researched about the Kong API gateway backed by cassandra cluster.
@@ -17,6 +19,8 @@
 * Noopur
      
 * Anisha Vaghela:
+	+ Research on how to deploy the MongoDB database to the cloud.
+    + Check on creation of backend APIs for login/signup in go.
       
 * Miraj Patel:
     + Research about how to deploy the kong Gateway (AWS EC2 or docker)
