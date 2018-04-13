@@ -8,6 +8,9 @@
 ## Week 1
 + We decided to divide responsibilities according to the functionality and create a simple modular structure.
 
+## Week 2
++ Modularized the project by dividing each functionality into independent modules to simplify the project structure.
+
 
 #### References
 [Extreme Programming](http://www.extremeprogramming.org/values.html)
