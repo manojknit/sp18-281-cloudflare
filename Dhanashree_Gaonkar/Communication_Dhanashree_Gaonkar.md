@@ -6,5 +6,8 @@
 ## Week 1
 + Helped the team to setup standard protocols for effective communication.
 
+## Week 2
++ Communicated to the team to bring about isolation in the implementation modules so as to have an effective design.
+
 References
 [1] [Agile Zone](https://dzone.com/articles/xp-values-communication)
