@@ -41,7 +41,7 @@
 #### 1.  What did the team do the past week?
 
 * Noopur
-   + 
+   + Initial setup for checkout module(GoAPI).
      
 * Anisha Vaghela:
 	
@@ -54,7 +54,7 @@
 #### 2.  What is the team going to do next week?
 
 * Noopur
-	+ 
+	+ Helper functions for connecting to Mongodb and Redis.
      
 * Anisha Vaghela:
 	
