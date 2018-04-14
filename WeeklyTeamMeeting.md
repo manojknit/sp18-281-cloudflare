@@ -44,9 +44,9 @@
    + Initial setup for checkout module(GoAPI).
      
 * Anisha Vaghela:
-	
       
 * Miraj Patel:
+   + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
    
 * Dhanashree
    + Initial setup for Goapi to connect with mongodb nosql.
@@ -54,11 +54,12 @@
 #### 2.  What is the team going to do next week?
 
 * Noopur
-	+ Helper functions for connecting to Mongodb and Redis.
+   + Helper functions for connecting to Mongodb and Redis.
      
 * Anisha Vaghela:
 	
 * Miraj Patel:
+   + Create basic structure of Goapi for accessing the kong gateway.
    
 * Dhanashree
     + Base code for connection to Mongodb nosql and Redis Cache.
