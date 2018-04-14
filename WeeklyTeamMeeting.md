@@ -35,3 +35,33 @@
 #### 3.  What are the current blockers/challenges the team is facing?
 * The exact architecture required for the project
 * How the project management will work in terms of assimilating the work. (hosting AWS? docker?heroku?)
+
+## Week 2 - 60 min
+
+#### 1.  What did the team do the past week?
+
+* Noopur
+	+ 
+     
+* Anisha Vaghela:
+	
+      
+* Miraj Patel:
+   
+* Dhanashree
+     + 
+     
+#### 2.  What is the team going to do next week?
+
+* Noopur
+	+ 
+     
+* Anisha Vaghela:
+	
+* Miraj Patel:
+   
+* Dhanashree
+    + 
+
+#### 3.  What are the current blockers/challenges the team is facing?
+* 
