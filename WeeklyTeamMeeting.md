@@ -41,7 +41,7 @@
 #### 1.  What did the team do the past week?
 
 * Noopur
-	+ 
+   + 
      
 * Anisha Vaghela:
 	
@@ -49,7 +49,7 @@
 * Miraj Patel:
    
 * Dhanashree
-     + 
+   + Initial setup for Goapi to connect with mongodb nosql.
      
 #### 2.  What is the team going to do next week?
 
@@ -61,7 +61,7 @@
 * Miraj Patel:
    
 * Dhanashree
-    + 
+    + Base code for connection to Mongodb nosql and Redis Cache.
 
 #### 3.  What are the current blockers/challenges the team is facing?
-* 
+* How to configure Mongodb for AP using Replicasets.
