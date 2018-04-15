@@ -36,7 +36,7 @@
 * The exact architecture required for the project
 * How the project management will work in terms of assimilating the work. (hosting AWS? docker?heroku?)
 
-## Week 2 - 60 min
+## Week 2 - 30 min
 
 #### 1.  What did the team do the past week?
 

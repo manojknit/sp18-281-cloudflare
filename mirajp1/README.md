@@ -9,6 +9,13 @@ This week's work included working on assimilating information about kong api gat
 * Learnt about the Kong API gateway and various methods of deploying it in the cloud
 * Team discussion about the project description and the architecture.
 
-More details in [Kong API Gateway](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
+## Week 2
+
+### Kong Deployment
+
+* Researched about how to deploy the kong Gateway on AWS
+* Test out viability of deploying kong gateway on docker cloud.
+
+More details in [Kong API Gateway](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/Deployment.md)
 
 
