@@ -13,6 +13,10 @@ In Extreme Programming, feedback is ensured at all levels at different time scal
 + Adviced my team to do proper research on all the aspects of the project so that we can work accordingly.
 + This research would help us to work efficiently and estimate time required for development.
 
+## Week 2
++ Discussed with the team the work done last week and how to improve upon that this week.
++ Discussed and analysed different scenarios and use cases that can be used in the project.
+
 
 #### References
 [Extreme Programming - Feedback](http://www.extremeprogramming.org/values.html)
