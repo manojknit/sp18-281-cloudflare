@@ -76,7 +76,7 @@
    + Initial setup for checkout module(GoAPI).
      
 * Anisha Vaghela:
-   + Research on how to deploy the MongoDB database to the cloud.
+   + Check on creation of backend APIs for login/signup in go.
    
 * Miraj Patel:
    + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
@@ -90,7 +90,7 @@
    + Helper functions for connecting to Mongodb and Redis.
      
 * Anisha Vaghela:
-   + Check on creation of backend APIs for login/signup in go.
+   + Research on how to create node cluster and database for the login/signup and integrate it.
 	
 * Miraj Patel:
    + Create basic structure of Goapi for accessing the kong gateway.
