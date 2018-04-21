@@ -99,6 +99,6 @@
     + Setup db with schema for payment, transaction history.
 
 #### 3.  What are the current blockers/challenges the team is facing?
-* How to configure Mongodb for AP using Replicasets.
+* Continue working on individual module development with initial integration testing.
 
 
