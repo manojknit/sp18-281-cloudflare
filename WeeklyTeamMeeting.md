@@ -67,3 +67,38 @@
 
 #### 3.  What are the current blockers/challenges the team is facing?
 * How to configure Mongodb for AP using Replicasets.
+
+## Week 3 - 30 min
+
+#### 1.  What did the team do the past week?
+
+* Noopur
+   + Initial setup for checkout module(GoAPI).
+     
+* Anisha Vaghela:
+   + Research on how to deploy the MongoDB database to the cloud.
+   
+* Miraj Patel:
+   + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
+   
+* Dhanashree
+   + Connection interface for mongodb using GoAPI. Also connection interface to redis cache using GoAPI.
+     
+#### 2.  What is the team going to do next week?
+
+* Noopur
+   + Helper functions for connecting to Mongodb and Redis.
+     
+* Anisha Vaghela:
+   + Check on creation of backend APIs for login/signup in go.
+	
+* Miraj Patel:
+   + Create basic structure of Goapi for accessing the kong gateway.
+   
+* Dhanashree
+    + Setup db with schema for payment, transaction history.
+
+#### 3.  What are the current blockers/challenges the team is facing?
+* How to configure Mongodb for AP using Replicasets.
+
+
