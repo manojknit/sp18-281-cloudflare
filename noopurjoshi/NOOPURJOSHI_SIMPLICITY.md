@@ -11,6 +11,10 @@
 ## Week 2
 + Modularized the project by dividing each functionality into independent modules to simplify the project structure.
 
+## Week 3
++ Added five ec2 nodes for storing module specific data using mongodb.
++ Simplified the creation of nodes by creating a base image and using that to create all the other nodes.
+
 
 #### References
 [Extreme Programming](http://www.extremeprogramming.org/values.html)
