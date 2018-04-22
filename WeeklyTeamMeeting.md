@@ -68,7 +68,7 @@
 #### 3.  What are the current blockers/challenges the team is facing?
 * How to configure Mongodb for AP using Replicasets.
 
-## Week 3 - 30 min
+## Week 3 - 20 min
 
 #### 1.  What did the team do the past week?
 
@@ -79,7 +79,7 @@
    + Check on creation of backend APIs for login/signup in go.
    
 * Miraj Patel:
-   + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
+   + Created basic structure of Goapi for accessing the kong gateway.
    
 * Dhanashree
    + Connection interface for mongodb using GoAPI. Also connection interface to redis cache using GoAPI.
@@ -93,7 +93,8 @@
    + Research on how to create node cluster and database for the login/signup and integrate it.
 	
 * Miraj Patel:
-   + Create basic structure of Goapi for accessing the kong gateway.
+   + Setup the go api with types.go required.
+   + Setup the kong gateway in AWS to be used in the api.
    
 * Dhanashree
     + Setup db with schema for payment, transaction history.
