@@ -73,7 +73,7 @@
 #### 1.  What did the team do the past week?
 
 * Noopur
-   + Initial setup for checkout module(GoAPI).
+   + Initial setup for all mongodb ec2 instances or nodes.
      
 * Anisha Vaghela:
    + Check on creation of backend APIs for login/signup in go.
@@ -87,7 +87,8 @@
 #### 2.  What is the team going to do next week?
 
 * Noopur
-   + Helper functions for connecting to Mongodb and Redis.
+   + Setting up replication set for the cluster.
+   + Testing the cluster.
      
 * Anisha Vaghela:
    + Research on how to create node cluster and database for the login/signup and integrate it.
