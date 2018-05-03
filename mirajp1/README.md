@@ -15,7 +15,15 @@ This week's work included working on assimilating information about kong api gat
 
 * Researched about how to deploy the kong Gateway on AWS
 * Test out viability of deploying kong gateway on docker cloud.
-
 More details in [Kong API Gateway](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/Deployment.md)
 
+## Week 3
+
+### Kong Deployment
+
+* Deployed the cassandra cluster on AWS
+* Started a new EC2 and installed kong in it.
+* Configured kong to work with the cassandra cluster
+
+More details in [Kong Setup](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/KongSetup.md)
 

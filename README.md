@@ -17,7 +17,7 @@
 * [Link to Task Board](https://github.com/nguyensjsu/team281-cloudflare/projects/1)
 
 ## Weekly Kanban Flow Diagram
-* [Link to Weekly Kanban Flow Diagram](https://docs.google.com/spreadsheets/d/1uX5tYpCW3vvjT4HWiUYNjJKkHenDGGYrQ4wCNVFrfkU/edit#gid=2)
+* [Link to Weekly Kanban Flow Diagram](https://docs.google.com/spreadsheets/d/1uX5tYpCW3vvjT4HWiUYNjJKkHenDGGYrQ4wCNVFrfkU/edit?usp=sharing)
 
 ## Weekly Team Meeting Record
 * [Link to Weekly Team Meeting Record](https://github.com/nguyensjsu/team281-cloudflare/blob/master/WeeklyTeamMeeting.md)
