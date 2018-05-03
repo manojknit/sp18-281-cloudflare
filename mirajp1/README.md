@@ -17,7 +17,15 @@ This week's work included working on assimilating information about kong api gat
 * Test out viability of deploying kong gateway on docker cloud.
 More details in [Kong API Gateway](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/Deployment.md)
 
+
 ## Week 3
+
+### Go api
+
+* created the basic structure for the go api to be used for the project
+* researched about deploymnent of kong with the cassandra cluster created in personal project.
+
+## Week 4
 
 ### Kong Deployment
 
