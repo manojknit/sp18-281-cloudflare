@@ -103,4 +103,39 @@
 #### 3.  What are the current blockers/challenges the team is facing?
 * Continue working on individual module development with initial integration testing.
 
+## Week 4 - 20 min
+
+#### 1.  What did the team do the past week?
+
+* Noopur
+   + Initial setup for all mongodb ec2 instances or nodes.
+     
+* Anisha Vaghela:
+   + Check on creation of backend APIs for login/signup in go.
+   
+* Miraj Patel:
+   + Created basic structure of Goapi for accessing the kong gateway.
+   
+* Dhanashree
+   + Setup db with schema for payment, transaction history.
+
+     
+#### 2.  What is the team going to do next week?
+
+* Noopur
+   + Setting up replication set for the cluster.
+   + Testing the cluster.
+     
+* Anisha Vaghela:
+   + Research on how to create node cluster and database for the login/signup and integrate it.
+	
+* Miraj Patel:
+   + Setup the go api with types.go required.
+   + Setup the kong gateway in AWS to be used in the api.
+   
+* Dhanashree
+    + Module integration and end-to-end testing.
+#### 3.  What are the current blockers/challenges the team is facing?
+*  + Module integration and end-to-end testing.
+
 
