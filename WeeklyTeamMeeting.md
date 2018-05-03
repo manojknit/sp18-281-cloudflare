@@ -114,7 +114,7 @@
    + Check on creation of backend APIs for login/signup in go.
    
 * Miraj Patel:
-   + Created basic structure of Goapi for accessing the kong gateway.
+   + Configured the kong api gateway with the cassandra cluster created in personal project.
    
 * Dhanashree
    + Setup db with schema for payment, transaction history.
@@ -130,8 +130,7 @@
    + Research on how to create node cluster and database for the login/signup and integrate it.
 	
 * Miraj Patel:
-   + Setup the go api with types.go required.
-   + Setup the kong gateway in AWS to be used in the api.
+   + Create the apis to hit configure the kong api gateway.
    
 * Dhanashree
     + Module integration and end-to-end testing.

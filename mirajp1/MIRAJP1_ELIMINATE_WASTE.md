@@ -12,6 +12,9 @@
 ## Week 3
 + We decided and came up with an final architecture for our application and I helped the team decide on the parts necessary. This made the scope of project very specific, instead of having lot of haphazard modules.
 
+## Week 4
++ Helped the team decide on what modules to build and test first. This helped us to set a priority list so that major tasks are completed on time and time is left for proper integration.
+
 
 #### References
 [1] [Agile Advice](http://www.agileadvice.com/2005/04/27/scrumxplean/eliminate-waste/)
