@@ -111,7 +111,7 @@
    + Initial setup for all mongodb ec2 instances or nodes.
      
 * Anisha Vaghela:
-   + Check on creation of backend APIs for login/signup in go.
+   + Setup of ec2 node and clusters.
    
 * Miraj Patel:
    + Configured the kong api gateway with the cassandra cluster created in personal project.
@@ -127,7 +127,7 @@
    + Testing the cluster.
      
 * Anisha Vaghela:
-   + Research on how to create node cluster and database for the login/signup and integrate it.
+   + Research on creation of go apis and use them in project.
 	
 * Miraj Patel:
    + Create the apis to hit configure the kong api gateway.
