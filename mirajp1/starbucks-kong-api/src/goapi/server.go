@@ -11,10 +11,11 @@ import (
     "github.com/gorilla/schema"
 	"github.com/unrolled/render"
     "encoding/json"
+    "os"
 )
 
 var decoder = schema.NewDecoder()
-
+var kong_server string = os.Getenv("KONG_SERVER")
 
 func NewServer() *negroni.Negroni {
 	formatter := render.New(render.Options{
@@ -45,7 +46,7 @@ func failOnError(err error, msg string) {
 
 func pingHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-        resp, err := http.Get("http://kong-aws:8001" )
+        resp, err := http.Get("http://"+kong_server+":8001" )
 	    if err != nil {
 		    fmt.Println("[Kong DEBUG] " + err.Error())
 		    return
@@ -62,7 +63,7 @@ func pingHandler(formatter *render.Render) http.HandlerFunc {
 
 func getKongApisHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-        resp, err := http.Get("http://kong-aws:8001/apis" )
+        resp, err := http.Get("http://"+kong_server+":8001/apis" )
 	    if err != nil {
 		    fmt.Println("[Kong DEBUG] " + err.Error())
 		    return
@@ -94,7 +95,7 @@ func createNewKongApiHandler(formatter *render.Render) http.HandlerFunc {
 	    fmt.Printf("[Kong DEBUG] POST: " + "kong-aws:8001/apis => %+v", kongApi)
         //jsonValue, _ := json.Marshal(values)
 
-        resp, err := http.Post("http://kong-aws:8001/apis", 
+        resp, err := http.Post("http://"+kong_server+":8001/apis", 
 					        "application/json",  bytes.NewBuffer(body))
         if err != nil {
 	        formatter.JSON(w, http.StatusBadRequest,"wrong data")

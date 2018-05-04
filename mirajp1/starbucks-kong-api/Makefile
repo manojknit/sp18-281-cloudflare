@@ -30,11 +30,11 @@ test-gumball:
 	curl localhost:3000/gumball
 
 docker-build: 
-	docker build -t goapi .
+	docker build -t kong-api .
 	docker images
 
 docker-run:
-	docker run --name goapi -td -p 3000:3000 goapi
+	docker run -e KONG_SERVER=54.183.59.125 --name kong-api -td -p 3000:3000 kong-api
 	docker ps
 
 docker-network:
@@ -44,12 +44,12 @@ docker-network-inspect:
 	docker network inspect host
 
 docker-shell:
-	docker exec -it goapi bash 
+	docker exec -it kong-api bash 
 
 docker-clean:
-	docker stop goapi
-	docker rm goapi
-	docker rmi goapi
+	docker stop kong-api
+	docker rm kong-api
+	docker rmi kong-api
 
 docker-ip:
 	docker-machine ip
