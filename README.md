@@ -38,4 +38,4 @@
 
 ### Architecture Diagram
 
-[Architecture](https://github.com/nguyensjsu/team281-cloudflare/blob/master/architecture.png)
+![Architecture](https://github.com/nguyensjsu/team281-cloudflare/blob/master/architecture.png)
