@@ -35,3 +35,7 @@
 
 ### Communication
 * [Dhanashree's Journal](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Communication_Dhanashree_Gaonkar.md)
+
+### Architecture Diagram
+
+[Architecture](https://github.com/nguyensjsu/team281-cloudflare/blob/master/architecture.png)
