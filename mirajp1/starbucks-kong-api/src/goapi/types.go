@@ -3,7 +3,7 @@ package main
 
 type KongApi struct {
 	Name          	    string  `json:"name"`	
-	RequestPath         string  `json:"request_path"`  	
-	StripRequestPath 	string	`json:"strip_request_path"`    
+	Uris                string  `json:"uris"`  	
+	StripUri 	        string	`json:"strip_uri"`    
 	UpstreamUrl 	    string	`json:"upstream_url"`
 }

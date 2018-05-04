@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
     "io/ioutil"
+    "bytes"
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
     "github.com/gorilla/schema"
@@ -29,8 +30,8 @@ func NewServer() *negroni.Negroni {
 //apis for setting up kong
 func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/ping", pingHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/upstream", pingHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/api", createNewKongApiHandler(formatter)).Methods("POST")
+	mx.HandleFunc("/apis", getKongApisHandler(formatter)).Methods("GET")
+	mx.HandleFunc("/apis", createNewKongApiHandler(formatter)).Methods("POST")
 }
 
 
@@ -59,9 +60,20 @@ func pingHandler(formatter *render.Render) http.HandlerFunc {
 	}
 }
 
-func getUpstreamURLHandler(formatter *render.Render) http.HandlerFunc {
+func getKongApisHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-		formatter.JSON(w, http.StatusOK, struct{ Test string }{"URL"})
+        resp, err := http.Get("http://kong-aws:8001/apis" )
+	    if err != nil {
+		    fmt.Println("[Kong DEBUG] " + err.Error())
+		    return
+	    }
+	    defer resp.Body.Close()
+	    body, err := ioutil.ReadAll(resp.Body)
+	    fmt.Println("[Kong DEBUG] GET: " + "kong-aws:8001/apis => " + string(body)) 
+        w.Header().Set("Content-Type", "application/json")
+        w.WriteHeader(http.StatusOK)
+        w.Write(body)
+		//formatter.JSON(w, http.StatusOK, body)
 	}
 }
 
@@ -79,7 +91,19 @@ func createNewKongApiHandler(formatter *render.Render) http.HandlerFunc {
         body, _ := ioutil.ReadAll(req.Body)
         json.Unmarshal(body, &kongApi)
         
-	    fmt.Printf("[Kong DEBUG] POST: " + "kong-aws:8001/ => %+v", kongApi) 
-		formatter.JSON(w, http.StatusOK , kongApi)
+	    fmt.Printf("[Kong DEBUG] POST: " + "kong-aws:8001/apis => %+v", kongApi)
+        //jsonValue, _ := json.Marshal(values)
+
+        resp, err := http.Post("http://kong-aws:8001/apis", 
+					        "application/json",  bytes.NewBuffer(body))
+        if err != nil {
+	        formatter.JSON(w, http.StatusBadRequest,"wrong data")
+        }
+        defer resp.Body.Close()
+        body1, err := ioutil.ReadAll(resp.Body) 
+        w.Header().Set("Content-Type", "application/json")
+        w.WriteHeader(http.StatusOK)
+        w.Write(body1)
+		//formatter.JSON(w, http.StatusOK , kongApi)
 	}
 }
