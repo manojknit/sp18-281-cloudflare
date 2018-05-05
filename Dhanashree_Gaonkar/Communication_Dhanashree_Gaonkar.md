@@ -15,6 +15,9 @@
 ## Week 4
 + Communicated the importance of unit tests to the team.
 
+## Week 5
++ Communicated the importance of integration testing by setting up meetings for integration testing a week before the demo.
+
 References
 [1] [Agile Zone](https://dzone.com/articles/xp-values-communication)
 

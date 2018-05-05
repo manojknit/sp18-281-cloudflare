@@ -4,6 +4,7 @@
 
 * Noopur
 	+ Research on which NoSql DB to be used.
+	+ More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
 	+ Research on using which NoSQL database in the project.
@@ -43,6 +44,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for checkout module(GoAPI).
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Research on how to deploy the MongoDB database to the cloud.
@@ -77,6 +79,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for all mongodb ec2 instances or nodes.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Check on creation of backend APIs for login/signup in go.
@@ -113,6 +116,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for all mongodb ec2 instances or nodes.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Setup of ec2 node and clusters.
@@ -142,47 +146,14 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 #### 3.  What are the current blockers/challenges the team is facing?
 *  + Module integration and end-to-end testing.
 
-## Week 4 - 20 min
-
-#### 1.  What did the team do the past week?
-
-* Noopur
-   + Initial setup for all mongodb ec2 instances or nodes.
-     
-* Anisha Vaghela:
-   + Setup of ec2 node and clusters.
-   
-* Miraj Patel:
-   + Configured the kong api gateway with the cassandra cluster created in personal project.
-   + More details in [Kong Setup](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/KongSetup.md)
-   
-* Dhanashree
-   + Setup db with schema for payment, transaction history.
-
-     
-#### 2.  What is the team going to do next week?
-
-* Noopur
-   + Setting up replication set for the cluster.
-   + Testing the cluster.
-     
-* Anisha Vaghela:
-   + Research on creation of go apis and use them in project.
-	
-* Miraj Patel:
-   + Create the apis to hit configure the kong api gateway.
-   
-* Dhanashree
-    + Module integration and end-to-end testing.
-#### 3.  What are the current blockers/challenges the team is facing?
-*  + Module integration and end-to-end testing.
 
 ## Week 5 - 60 min
 
 #### 1.  What did the team do the past week?
 
 * Noopur
-   + 
+   + Module integration and end-to-end testing.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + 
@@ -193,6 +164,6 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    + Created a docker compose file of the containers for deployment
    
 * Dhanashree
-   + Setup db with schema for payment, transaction history.
+   +  Module integration and end-to-end testing.
 
 

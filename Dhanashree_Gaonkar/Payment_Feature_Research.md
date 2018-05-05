@@ -2,8 +2,7 @@
 ## Payment Module
 
 #### The Payment module would take care of following functionalities:
-+ Billing
++ Generate Bill
 + Payment Mode
-+ Promo Code/ Discount
-+ Transaction Rollback
++ Update Pending Order
 + Transaction History
