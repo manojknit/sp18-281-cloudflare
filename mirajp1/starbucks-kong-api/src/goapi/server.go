@@ -33,6 +33,7 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/ping", pingHandler(formatter)).Methods("GET")
 	mx.HandleFunc("/apis", getKongApisHandler(formatter)).Methods("GET")
 	mx.HandleFunc("/apis", createNewKongApiHandler(formatter)).Methods("POST")
+    mx.HandleFunc("/apis", createNewKongApiHandler(formatter)).Methods("DELETE")
 }
 
 
