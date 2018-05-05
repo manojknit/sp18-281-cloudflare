@@ -1,6 +1,6 @@
 /*
-	 API in Go (Version 3)
-	Uses MongoDB 
+	Starbucks API in Go (Version 3)
+	Uses MongoDB and Redis 
 	(For use with Kong API Key)
 */
 
@@ -58,10 +58,10 @@ func NewServer() *negroni.Negroni {
 // API Routes
 func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/ping", pingHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/gumball/{id}", gumballHandler(formatter)).Methods("GET")
-	mx.HandleFunc("/gumball", gumballUpdateHandler(formatter)).Methods("PUT")
-	mx.HandleFunc("/gumball", gumballNewOrderHandler(formatter)).Methods("POST")
-	mx.HandleFunc("/gumball/{id}", gumballDeleteHandler(formatter)).Methods("DELETE")
+	mx.HandleFunc("/starbucks/{id}", starbucksHandler(formatter)).Methods("GET")
+	mx.HandleFunc("/starbucks", starbucksUpdateHandler(formatter)).Methods("PUT")
+	mx.HandleFunc("/starbucks", starbucksNewOrderHandler(formatter)).Methods("POST")
+	mx.HandleFunc("/starbucks/{id}", starbucksDeleteHandler(formatter)).Methods("DELETE")
 	//api route to gopayment handler
     //mx.HandleFunc("/redisget/{key}",
 	//red_getHandler(formatter)).Methods("GET")
@@ -131,7 +131,7 @@ func red_getHandler(uid string)(bool){
 	var m gumballMachine
 	_ = json.NewDecoder(req.Body).Decode(&m)
 	client:=get_client()
-	err := client.Set(m.UserId, "dhan_value", 0).Err()
+	err := client.Set(m.UserId, "my_value", 0).Err()
 	if err != nil {
 		panic(err)
 	}
@@ -196,10 +196,10 @@ func pingHandler(formatter *render.Render) http.HandlerFunc {
 
 
 // API  Handler --------------- GET ------------------
-func gumballHandler(formatter *render.Render) http.HandlerFunc {
+func starbucksHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 	    
-		//var m gumballMachine
+		//var m test
 		vars:=mux.Vars(req)
 		id,err1 := strconv.Atoi(vars["id"])
 	
@@ -221,18 +221,18 @@ func gumballHandler(formatter *render.Render) http.HandlerFunc {
         if err != nil {
                 log.Fatal(err)
         }
-        fmt.Println("Gumball Machine:", result )
+        fmt.Println("Result :", result )
 		formatter.JSON(w, http.StatusOK, result)
 	}
 }
 
 // API Update Inventory ----------- PUT --------------
-func gumballUpdateHandler(formatter *render.Render) http.HandlerFunc {
+func starbucksUpdateHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-    	var m gumballMachine
+    	var m test
 		
   	_ = json.NewDecoder(req.Body).Decode(&m)		
-    	fmt.Println("Update Gumball Inventory To: ", m.CountGumballs)
+    	fmt.Println("Update Inventory To: ", m.Count)
 		
 			
 		
@@ -245,7 +245,7 @@ func gumballUpdateHandler(formatter *render.Render) http.HandlerFunc {
         session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
         query := bson.M{"Id" : m.Id}
-        change := bson.M{"$set": bson.M{ "CountGumballs" : m.CountGumballs, "SerialNumber":m.SerialNumber,"ModelNumber":m.ModelNumber}}
+        change := bson.M{"$set": bson.M{ "Count" : m.Count, "SerialNumber":m.SerialNumber,"ModelNumber":m.ModelNumber}}
         err = c.Update(query, change)
         if err != nil {
                 log.Fatal(err)
@@ -255,17 +255,17 @@ func gumballUpdateHandler(formatter *render.Render) http.HandlerFunc {
         if err != nil {
                 log.Fatal(err)
         }        
-        fmt.Println("Gumball Machine:", result )
+        fmt.Println("Result:", result )
 		formatter.JSON(w, http.StatusOK, result)
 	}
 }
 
 
 // --------------------- POST ----------------------------
-func gumballNewOrderHandler(formatter *render.Render) http.HandlerFunc {
+func starbucksNewOrderHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		
-		var m gumballMachine
+		var m test
     	_ = json.NewDecoder(req.Body).Decode(&m)		
     	fmt.Println("Insert into Inventory ")
 				
@@ -277,7 +277,7 @@ func gumballNewOrderHandler(formatter *render.Render) http.HandlerFunc {
         defer session.Close()
         session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
-        query := bson.M{"Id" : m.Id, "CountGumballs" : m.CountGumballs, "ModelNumber" : m.ModelNumber, "SerialNumber" : m.SerialNumber}
+        query := bson.M{"Id" : m.Id, "Count" : m.Count, "ModelNumber" : m.ModelNumber, "SerialNumber" : m.SerialNumber}
         err = c.Insert(query)
         if err != nil {
                 log.Fatal(err)
@@ -292,10 +292,10 @@ func gumballNewOrderHandler(formatter *render.Render) http.HandlerFunc {
 }
 
 // ------------------ Delete ---------------------
-func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
+func starbucksDeleteHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 	
-		var m gumballMachine
+		var m test
     	_ = json.NewDecoder(req.Body).Decode(&m)
 		vars := mux.Vars(req)
 		id, err1 := strconv.Atoi(vars["id"])
@@ -308,7 +308,7 @@ func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
                 panic(err)
         }
 		
-		fmt.Println("Gumball Machine id:", id)
+		fmt.Println("User id:", id)
         defer session.Close()
         session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
@@ -318,8 +318,7 @@ func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
 				panic(err)
                 log.Fatal(err)
         }
-        fmt.Println("Gumball Machine:", result)
+        fmt.Println("Result:", result)
 		formatter.JSON(w, http.StatusOK, result)
 	}
 }
-
