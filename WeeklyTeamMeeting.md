@@ -4,6 +4,7 @@
 
 * Noopur
 	+ Research on which NoSql DB to be used.
+	+ More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
 	+ Research on using which NoSQL database in the project.
@@ -43,6 +44,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for checkout module(GoAPI).
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Research on how to deploy the MongoDB database to the cloud.
@@ -77,6 +79,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for all mongodb ec2 instances or nodes.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Check on creation of backend APIs for login/signup in go.
@@ -113,6 +116,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Initial setup for all mongodb ec2 instances or nodes.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + Setup of ec2 node and clusters.
@@ -149,6 +153,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 
 * Noopur
    + Module integration and end-to-end testing.
+   + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
    + 
