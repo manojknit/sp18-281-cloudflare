@@ -19,6 +19,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
 * Dhanashree
      + Research on the payment feature to be incorporated in the project based on various other products in market.
      + Team discussion related to project architecture and structure.
+     + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
      
 #### 2.  What is the team going to do next week?
 
@@ -33,6 +34,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
     + Test deployment of the kong and cassandra in AWS EC2
 * Dhanashree
     + Research on how to model the data for the different usecases in payment module
+    + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
 
 #### 3.  What are the current blockers/challenges the team is facing?
 * The exact architecture required for the project
@@ -55,6 +57,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
   
 * Dhanashree
    + Initial setup for Goapi to connect with mongodb nosql.
+   + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
      
 #### 2.  What is the team going to do next week?
 
@@ -69,6 +72,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    
 * Dhanashree
     + Base code for connection to Mongodb nosql and Redis Cache.
+    + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
 
 #### 3.  What are the current blockers/challenges the team is facing?
 * How to configure Mongodb for AP using Replicasets.
@@ -90,6 +94,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    
 * Dhanashree
    + Connection interface for mongodb using GoAPI. Also connection interface to redis cache using GoAPI.
+   + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
      
 #### 2.  What is the team going to do next week?
 
@@ -106,6 +111,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    
 * Dhanashree
     + Setup db with schema for payment, transaction history.
+    + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
 
 #### 3.  What are the current blockers/challenges the team is facing?
 * Continue working on individual module development with initial integration testing.
@@ -127,6 +133,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    
 * Dhanashree
    + Setup db with schema for payment, transaction history.
+   + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
 
      
 #### 2.  What is the team going to do next week?
@@ -167,5 +174,6 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    
 * Dhanashree
    +  Module integration and end-to-end testing.
+   + More details on [Individual Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/Dhanashree_Gaonkar/Readme.md)
 
 
