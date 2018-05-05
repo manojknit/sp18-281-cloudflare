@@ -24,6 +24,10 @@ In Extreme Programming, feedback is ensured at all levels at different time scal
 ## Week 4
 + Gave feedback to the team about the individual work done and optimization.
 
+## Week 5
++ Discussed with the team about analysed the ways to integrate the code.
++ Gave feedback regarding the integration which can be better for the project. 
+
 #### References
 [Extreme Programming - Feedback](http://www.extremeprogramming.org/values.html)
 [TutorialsPoint - Extreme Programming - Feedback](https://www.tutorialspoint.com/extreme_programming/extreme_programming_values_principles.htm)
