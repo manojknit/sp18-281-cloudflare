@@ -12,20 +12,26 @@ import (
 	"net/http"
 	"encoding/json"
 	"strconv"
-	//"goji.io/pat"
 	"github.com/codegangsta/negroni"
-	//"github.com/streadway/amqp"
 	"github.com/gorilla/mux"
+	"github.com/satori/go.uuid"
 	"github.com/unrolled/render"
-	//"github.com/satori/go.uuid"
 	"gopkg.in/mgo.v2"
     "gopkg.in/mgo.v2/bson"
+	"github.com/go-redis/redis"
+	"os"
+	"hash/fnv"
 )
 
 // MongoDB Config
-var mongodb_server = "mongodb://54.193.23.61:27017/"
-var mongodb_database = "admin"
-var mongodb_collection = "admin"
+var mongodb_server string
+var mongodb_server1 string
+var mongodb_server2 string
+var redis_server string
+//="mongodb://54.67.13.87:27017,54.67.106.101:27017,13.57.39.192:27017,54.153.26.217://27017,52.53.154.42:27017"
+
+var mongodb_database string
+var mongodb_collection string
 
 
 
@@ -34,6 +40,14 @@ func NewServer() *negroni.Negroni {
 	formatter := render.New(render.Options{
 		IndentJSON: true,
 	})
+	
+	mongodb_server = os.Getenv("MONGO1")
+	mongodb_server1 = os.Getenv("MONGO2")
+	mongodb_server2 = os.Getenv("MONGO3")
+	mongodb_database = os.Getenv("MONGO_DB")
+	mongodb_collection = os.Getenv("MONGO_COLLECTION")
+	redis_server = os.Getenv("REDIS")
+		
 	n := negroni.Classic()
 	mx := mux.NewRouter()
 	initRoutes(mx, formatter)
@@ -48,16 +62,130 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/gumball", gumballUpdateHandler(formatter)).Methods("PUT")
 	mx.HandleFunc("/gumball", gumballNewOrderHandler(formatter)).Methods("POST")
 	mx.HandleFunc("/gumball/{id}", gumballDeleteHandler(formatter)).Methods("DELETE")
+	//api route to gopayment handler
+    //mx.HandleFunc("/redisget/{key}",
+	//red_getHandler(formatter)).Methods("GET")
+	mx.HandleFunc("/redisSet",
+	red_setHandler(formatter)).Methods("POST")
+    mx.HandleFunc("/checkoutCart",
+	checkoutHandler(formatter)).Methods("POST")
+	
 }
 
-// Helper Functions
-func failOnError(err error, msg string) {
-	if err != nil {
-		log.Fatalf("%s: %s", msg, err)
-		panic(fmt.Sprintf("%s: %s", msg, err))
+// sharding function
+func hash(s string) string {
+        h := fnv.New32a()
+        h.Write([]byte(s))
+		node := h.Sum32()%3
+		if node == 0 {
+			return mongodb_server
+		} else if node == 1 {
+			return mongodb_server1
+		} else if node == 2 {
+			return mongodb_server2
+		} else {
+			return mongodb_server
+		}
+}
+
+
+//Redis connection
+var client *redis.Client
+
+
+func get_client()(*redis.Client){
+	client := redis.NewClient(&redis.Options{
+		Addr:  redis_server,
+		Password: "", // no password set
+		DB:       0,  // use default DB
+	})
+
+    pong, err := client.Ping().Result()
+	fmt.Println("ponging",pong,err)
+	return client
+	
+}
+
+ //get key from cache
+func red_getHandler(uid string)(bool){
+	
+	client:=get_client()
+	
+	 _,err := client.Get(uid).Result()
+	
+	fmt.Println(uid,"my uid")
+	
+	if err == redis.Nil {
+		return false
+	}else if err != nil{
+		panic(err)
+	}else{
+		return true
 	}
-}
+		
+	}
+	
+	// set key in cache
+	func red_setHandler(formatter *render.Render) http.HandlerFunc {  
+	return func(w http.ResponseWriter, req *http.Request) {
+	var m gumballMachine
+	_ = json.NewDecoder(req.Body).Decode(&m)
+	client:=get_client()
+	err := client.Set(m.UserId, "dhan_value", 0).Err()
+	if err != nil {
+		panic(err)
+	}
+	formatter.JSON(w, http.StatusOK,struct{ Test string }{"Value pushed"})
+	}
+	}
 
+	
+	//CheckoutHandler
+	 
+	 
+	 func checkoutHandler(formatter *render.Render) http.HandlerFunc{
+		return func(w http.ResponseWriter, req *http.Request) {
+		uuid := uuid.NewV4()
+		var payment paymentDetails
+		var response string
+		
+		_ = json.NewDecoder(req.Body).Decode(&payment)		
+    	fmt.Println("Insert Payment details in db ")
+				
+		
+		check := red_getHandler(payment.UserId)
+		
+		if(check){
+			
+			session, err := mgo.Dial(hash(payment.UserId))
+        if err != nil {
+                panic(err)
+        }
+		defer session.Close()
+        session.SetMode(mgo.PrimaryPreferred, true)
+		
+		//Push payment details
+        c := session.DB(mongodb_database).C(mongodb_collection)
+        query := bson.M{"PaymentId":uuid.String(),"UserId" : payment.UserId, "PaymentType" : payment.PaymentType, "TotalPrice" : payment.TotalPrice, "CartId" : payment.CartId}
+        err = c.Insert(query)
+		
+		//Update Order Status
+		err = c.Update(bson.M{"UserId": payment.UserId}, bson.M{"$set": bson.M{"Status": "PROCESSED"}})
+		var resp bson.M
+        err = c.Find( bson.M{ "$and": []bson.M{ bson.M{"UserId":payment.UserId}, bson.M{"Status": "PROCESSED"} } } ).One(&resp)
+		
+        if err != nil {
+                log.Fatal(err)
+        }
+		   response = "Your order is processed successfully"
+		}else{
+		   response= "Session invalid"
+		}
+				
+		formatter.JSON(w, http.StatusOK,struct{ Test string }{response})
+		
+		}
+	 }
 // API Ping Handler
 func pingHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
@@ -65,24 +193,28 @@ func pingHandler(formatter *render.Render) http.HandlerFunc {
 	}
 }
 
+
+
 // API  Handler --------------- GET ------------------
 func gumballHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-	    //var m gumballMachine
-		
+	    
+		//var m gumballMachine
 		vars:=mux.Vars(req)
 		id,err1 := strconv.Atoi(vars["id"])
 	
 		if err1 != nil {
 			fmt.Println(err1)
 		}
-		
+				
 		session, err := mgo.Dial(mongodb_server)
         if err != nil {
                 panic(err)
         }
+		
+		
         defer session.Close()
-        session.SetMode(mgo.Monotonic, true)
+        session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
         var result bson.M
         err = c.Find(bson.M{"Id" : id}).One(&result)
@@ -98,14 +230,19 @@ func gumballHandler(formatter *render.Render) http.HandlerFunc {
 func gumballUpdateHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
     	var m gumballMachine
-    	_ = json.NewDecoder(req.Body).Decode(&m)		
+		
+  	_ = json.NewDecoder(req.Body).Decode(&m)		
     	fmt.Println("Update Gumball Inventory To: ", m.CountGumballs)
+		
+			
+		
 		session, err := mgo.Dial(mongodb_server)
         if err != nil {
                 panic(err)
         }
+		
         defer session.Close()
-        session.SetMode(mgo.Monotonic, true)
+        session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
         query := bson.M{"Id" : m.Id}
         change := bson.M{"$set": bson.M{ "CountGumballs" : m.CountGumballs, "SerialNumber":m.SerialNumber,"ModelNumber":m.ModelNumber}}
@@ -123,18 +260,22 @@ func gumballUpdateHandler(formatter *render.Render) http.HandlerFunc {
 	}
 }
 
+
 // --------------------- POST ----------------------------
 func gumballNewOrderHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
+		
 		var m gumballMachine
     	_ = json.NewDecoder(req.Body).Decode(&m)		
     	fmt.Println("Insert into Inventory ")
-		session, err := mgo.Dial(mongodb_server)
+				
+		session, err := mgo.Dial(hash(m.UserId))
         if err != nil {
                 panic(err)
         }
+		
         defer session.Close()
-        session.SetMode(mgo.Monotonic, true)
+        session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
         query := bson.M{"Id" : m.Id, "CountGumballs" : m.CountGumballs, "ModelNumber" : m.ModelNumber, "SerialNumber" : m.SerialNumber}
         err = c.Insert(query)
@@ -153,6 +294,7 @@ func gumballNewOrderHandler(formatter *render.Render) http.HandlerFunc {
 // ------------------ Delete ---------------------
 func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
+	
 		var m gumballMachine
     	_ = json.NewDecoder(req.Body).Decode(&m)
 		vars := mux.Vars(req)
@@ -160,17 +302,20 @@ func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
 		if err1 != nil {
 			fmt.Println(err1)
 		}
+				
 		session, err := mgo.Dial(mongodb_server)
         if err != nil {
                 panic(err)
         }
+		
 		fmt.Println("Gumball Machine id:", id)
         defer session.Close()
-        session.SetMode(mgo.Monotonic, true)
+        session.SetMode(mgo.PrimaryPreferred, true)
         c := session.DB(mongodb_database).C(mongodb_collection)
         var result bson.M
         err = c.Remove(bson.M{"Id" : id})
         if err != nil {
+				panic(err)
                 log.Fatal(err)
         }
         fmt.Println("Gumball Machine:", result)
@@ -178,56 +323,3 @@ func gumballDeleteHandler(formatter *render.Render) http.HandlerFunc {
 	}
 }
 
-
-/*
-
-	-- RabbitMQ Setup
-
-	http://localhost:8080
-
-	-- RabbitMQ Create Queue:  
-
-		Queue Name: gumball
-		Durable:	no
-
-	-- Gumball MongoDB Create Database
-
-		Database Name: cmpe281
-		Collection Name: gumball
-
-  	-- Gumball MongoDB Collection (Create Document) --
-
-    db.gumball.insert(
-	    { 
-	      Id: 1,
-	      CountGumballs: NumberInt(202),
-	      ModelNumber: 'M102988',
-	      SerialNumber: '1234998871109' 
-	    }
-	) ;
-
-    -- Gumball MongoDB Collection - Find Gumball Document --
-
-    db.gumball.find( { Id: 1 } ) ;
-
-    {
-        "_id" : ObjectId("54741c01fa0bd1f1cdf71312"),
-        "Id" : 1,
-        "CountGumballs" : 202,
-        "ModelNumber" : "M102988",
-        "SerialNumber" : "1234998871109"
-    }
-
-    -- Gumball MongoDB Collection - Update Gumball Document --
-
-    db.gumball.update( 
-        { Dd: 1 }, 
-        { $set : { CountGumballs : NumberInt(10) } },
-        { multi : false } 
-    )
-
-    -- Gumball Delete Documents
-
-    db.gumball.remove({})
-
- */
