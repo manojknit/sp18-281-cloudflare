@@ -54,6 +54,7 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/order/{id}", getCartDetails(formatter)).Methods("GET")
 	mx.HandleFunc("/order/{id}", updateOrderInCart(formatter)).Methods("PUT")
 	mx.HandleFunc("/order", addOrderToCart(formatter)).Methods("POST")
+	mx.HandleFunc("/history/{id}", orderHistory(formatter)).Methods("GET")
 }
 
 // sharding
@@ -149,6 +150,30 @@ func getCartDetails(formatter *render.Render) http.HandlerFunc {
         c := session.DB(mongodb_database).C(mongodb_collection)
         
         err = c.Find( bson.M{ "$and": []bson.M{ bson.M{"UserId":id}, bson.M{"Status": "PENDING"} } } ).One(&result)
+        if err != nil {
+                log.Fatal(err)
+        }
+		formatter.JSON(w, http.StatusOK, result)
+		}
+	}
+}
+
+func orderHistory(formatter *render.Render) http.HandlerFunc {
+	return func(w http.ResponseWriter, req *http.Request) {
+		var result []bson.M
+		vars:=mux.Vars(req)
+		id := vars["id"]
+		check := red_getHandler(id)
+		if check {			
+			session, err := mgo.Dial(hash(id))
+        if err != nil {
+                panic(err)
+        }
+        defer session.Close()
+        session.SetMode(mgo.PrimaryPreferred, true)
+        c := session.DB(mongodb_database).C(mongodb_collection)
+        
+        err = c.Find( bson.M{ "$and": []bson.M{ bson.M{"UserId":id}, bson.M{"Status": "PROCESSED"} } } ).All(&result)
         if err != nil {
                 log.Fatal(err)
         }
