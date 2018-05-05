@@ -1,16 +1,16 @@
 /*
-	]Starbucks API in Go (Version 3)
-	Uses MongoDB and Redis
+	Starbucks API in Go (Version 3)
+	Uses MongoDB and Redis 
 	(For use with Kong API Key)
 */
 	
 package main
 
-type gumballMachine struct {
+type test struct {
 		    
 	UserId 	string
 	Id             	int 	
-	CountGumballs   int    	
+	Count   int    	
 	ModelNumber 	string	    
 	SerialNumber 	string	
 }
