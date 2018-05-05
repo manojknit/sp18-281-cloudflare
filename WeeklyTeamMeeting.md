@@ -136,7 +136,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    + Testing the cluster.
      
 * Anisha Vaghela:
-   + Research on creation of go apis and use them in project.
+   + Creation of go apis and use them in project.
 	
 * Miraj Patel:
    + Create the apis to hit configure the kong api gateway.
@@ -156,7 +156,9 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    + More details on [Project Contribution](https://github.com/nguyensjsu/team281-cloudflare/blob/master/noopurjoshi/README.md)
      
 * Anisha Vaghela:
-   + 
+   + Created Login and Signup go APIs for the application.
+   + Developed UI for the team project application.
+   + Integrated frontend and backend by calling of APIs from the front end.
    
 * Miraj Patel:
    + Created the apis to hit configure the kong api gateway.
