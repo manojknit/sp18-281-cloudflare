@@ -34,6 +34,6 @@
 
 ## Week 5
 ### Module integration and testing
--[x] 1. Wrote unit testcases for unit testing.
--[x] 2. Did module integration testing for our microservices.
--[x] 3. Created a Postman collection for Go Api testing.
+- [x] 1. Wrote unit testcases for unit testing.
+- [x] 2. Did module integration testing for our microservices.
+- [x] 3. Created a Postman collection for Go Api testing.
