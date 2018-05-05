@@ -24,9 +24,31 @@ import (
 )
 
 // MongoDB Config
-var mongodb_server = "mongodb://54.183.14.90,52.53.150.53,54.153.37.72,54.67.37.239,54.67.123.195"
-var mongodb_database = "admin"
-var mongodb_collection = "starbucks"
+var mongodb_database string
+var mongodb_collection string
+
+var mongodb_server string
+var mongodb_server1 string
+var mongodb_server2 string
+var redis_server string
+
+	
+
+// sharding
+func hash(s string) string {
+        h := fnv.New32a()
+        h.Write([]byte(s))
+		node := h.Sum32()%3
+		if node == 0 {
+			return mongodb_server
+		} else if node == 1 {
+			return mongodb_server1
+		} else if node == 2 {
+			return mongodb_server2
+		} else {
+			return mongodb_server
+		}
+}
 
 
 
@@ -35,6 +57,12 @@ func NewServer() *negroni.Negroni {
 	formatter := render.New(render.Options{
 		IndentJSON: true,
 	})
+	mongodb_server = os.Getenv("MONGO1")
+	mongodb_server1 = os.Getenv("MONGO2")
+	mongodb_server2 = os.Getenv("MONGO3")
+	mongodb_database = os.Getenv("MONGO_DB")
+	mongodb_collection = os.Getenv("MONGO_COLLECTION")
+	redis_server = os.Getenv("REDIS")
 	n := negroni.Classic()
 	mx := mux.NewRouter()
 	initRoutes(mx, formatter)
@@ -61,7 +89,7 @@ func login(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		var m user
     	_ = json.NewDecoder(req.Body).Decode(&m)		
-		session, err := mgo.Dial(mongodb_server)
+		session, err := mgo.Dial(hash(m.UserId))
         fmt.Println(m)
 		if err != nil {
                 panic(err)
@@ -99,7 +127,7 @@ func signup(formatter *render.Render) http.HandlerFunc {
     	_ = json.NewDecoder(req.Body).Decode(&m)
     	fmt.Println("",m)
 
-		session, err := mgo.Dial(mongodb_server)
+		session, err := mgo.Dial(hash(m.UserId)
         if err != nil {
                 panic(err)
         }
@@ -120,7 +148,7 @@ func signup(formatter *render.Render) http.HandlerFunc {
 
 func get_client()(*redis.Client){
 	client := redis.NewClient(&redis.Options{
-		Addr:     "192.168.99.100:6397",
+		Addr:     redis_server,
 		Password: "", // no password set
 		DB:       0,  // use default DB
 	})
