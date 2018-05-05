@@ -1,0 +1,25 @@
+.button-radius{
+    border-radius: 30px!important;
+    background-color: #2b3340!important;
+    color: #ffffff;
+}
+
+.border{
+    border-radius: 30px!important;
+    border: 1px solid #BEC0C2;
+    padding: 5px;
+
+}
+
+.button-inactive{
+    background-color: #ffffff!important;
+    color: #2b3340;
+}
+
+.button-radius:hover{
+    color: #ffffff!important;
+}
+
+btn:hover{
+    color: #ffffff;
+}

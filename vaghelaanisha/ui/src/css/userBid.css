@@ -1,0 +1,30 @@
+.bid-item{
+    padding: 15px;
+    border-bottom: 1px solid #f3f3f3;
+    background-color: white;
+}
+
+.bid-user-name{
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.bid-amount{
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+.bid-amount{
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.bid-days{
+    margin-bottom:5px;
+}
+

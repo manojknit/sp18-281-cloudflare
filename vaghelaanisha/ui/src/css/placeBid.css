@@ -1,0 +1,85 @@
+.header{
+    font-weight: bold;
+    font-size: 31px;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif,"RobotoSubset"!important;
+    -webkit-font-smoothing: antialiased;
+    color: #1f2836;
+}
+
+.header-text{
+    font-size: 16px;
+    color: #4d525b;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.body-header{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    -webkit-font-smoothing: antialiased;
+    color: #1f2836;
+}
+
+.body-text{
+    font-size: 13.5px;
+    color: #4d525b;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    align: justify!important;
+}
+
+.text-box{
+    width: 100%;
+    border: 1px solid #BEC0C2;
+    color: #1f2836;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.upload-btn{
+    font-size: 13.5px;
+    font-weight: bold!important;
+    background-color: white;
+    border: 1px solid #4d525b!important;
+    color: #4d525b;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    align: justify!important;
+}
+
+.upload-btn-box{
+    border-style: dashed;
+    border-color: #BEC0C2;
+    padding-bottom: 10px;
+    padding-right: 10px!important;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-width: 1px;
+}
+
+.file-upload-text{
+    align: right;
+    color: #4d525b!important;
+}
+
+.post-project-btn{
+    font-size: 20px!important;
+    font-weight: bold!important;
+    background-color: #139ff0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    align: justify!important;
+}
+
+.btn:hover{
+    background-color: #0087e0!important;
+    color: #ffffff!important;
+}

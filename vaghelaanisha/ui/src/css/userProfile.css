@@ -1,0 +1,39 @@
+.user-name{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.userprofile-background{
+    background-color: #F7F7F7!important;
+}
+
+.user-data{
+    background-color: #F7F7F7;
+    padding-bottom: 70px;
+    border-left: 1px solid #DEDEDE;
+}
+
+.user-data-background{
+    background-color: white;
+    box-shadow: 1px 2px 3px #d3d3d3;
+}
+
+.user-projects{
+    text-align:center;
+}
+
+.user-skills{
+    border-bottom: 1px solid #eee;
+    padding: 7px;
+}
+
+.edit-profile-btn{
+    margin-top: 20px;
+    font-size: 20px!important;
+    width:100%!important;
+}
+
+.user-price{
+    font-weight: bold;
+    font-size: 25px;
+}

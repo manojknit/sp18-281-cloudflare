@@ -1,0 +1,66 @@
+.project-details-background{
+    background-color: #F0F0F0!important;
+}
+
+.header{
+    font-weight: bold;
+    font-size: 29px;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif,"RobotoSubset"!important;
+    -webkit-font-smoothing: antialiased;
+    color: #1f2836;
+}
+
+.project-data{
+    background-color: white;
+    padding-top:20px;
+    box-shadow: 1px 2px 3px #d3d3d3;
+}
+
+.column-center{
+    text-align: center;
+    border-right: 1px solid #CCC;
+}
+
+.number-text{
+    color:#008bcb!important;
+    font-weight: 700!important;
+    font-size: 22px!important;
+}
+
+.open-text{
+    color:#61AB00!important;
+    font-weight: 700!important;
+    font-size: 22px!important;
+}
+
+.days-colors{
+    color:#61AB00!important;
+}
+
+.body-header{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+}
+
+.body-text{
+    font-size: 13.5px;
+    color: #4d525b;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    align: justify!important;
+}
+
+.post-project-btn{
+    font-size: 20px!important;
+    font-weight: bold!important;
+    background-color: #008bcb;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.5;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+    align: justify!important;
+}
