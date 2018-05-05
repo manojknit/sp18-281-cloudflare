@@ -1,0 +1,58 @@
+{
+	"info": {
+		"name": "281project",
+		"_postman_id": "d435d427-7de9-3b74-5ecd-371b33cedf77",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create api",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\":\"goapi\",\n  \"uris\":\"/goapi\",\n  \"strip_uri\":\"true\",\n  \"upstream_url\":\"https://httpbin.org/ip\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/apis",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apis"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get apis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/apis",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apis"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

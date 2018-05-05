@@ -13,6 +13,8 @@
     + Researched about the Kong API gateway backed by cassandra cluster.
     + Found out possibilities of how to use Kong in the starbucks project.
     + Discussed with team on project architecture and structure.
+More details in [Project Research](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/ProjectResearchKong.md)
+
 * Dhanashree
      + Research on the payment feature to be incorporated in the project based on various other products in market.
      + Team discussion related to project architecture and structure.
@@ -47,7 +49,8 @@
    
 * Miraj Patel:
    + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
-   
+   + More details in [Deployment Research](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/Deployment.md)
+  
 * Dhanashree
    + Initial setup for Goapi to connect with mongodb nosql.
      
@@ -80,6 +83,7 @@
    
 * Miraj Patel:
    + Created basic structure of Goapi for accessing the kong gateway.
+   + More details in [Api](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/README.md)
    
 * Dhanashree
    + Connection interface for mongodb using GoAPI. Also connection interface to redis cache using GoAPI.
@@ -115,6 +119,7 @@
    
 * Miraj Patel:
    + Configured the kong api gateway with the cassandra cluster created in personal project.
+   + More details in [Kong Setup](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/KongSetup.md)
    
 * Dhanashree
    + Setup db with schema for payment, transaction history.
@@ -136,5 +141,58 @@
     + Module integration and end-to-end testing.
 #### 3.  What are the current blockers/challenges the team is facing?
 *  + Module integration and end-to-end testing.
+
+## Week 4 - 20 min
+
+#### 1.  What did the team do the past week?
+
+* Noopur
+   + Initial setup for all mongodb ec2 instances or nodes.
+     
+* Anisha Vaghela:
+   + Setup of ec2 node and clusters.
+   
+* Miraj Patel:
+   + Configured the kong api gateway with the cassandra cluster created in personal project.
+   + More details in [Kong Setup](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/KongSetup.md)
+   
+* Dhanashree
+   + Setup db with schema for payment, transaction history.
+
+     
+#### 2.  What is the team going to do next week?
+
+* Noopur
+   + Setting up replication set for the cluster.
+   + Testing the cluster.
+     
+* Anisha Vaghela:
+   + Research on creation of go apis and use them in project.
+	
+* Miraj Patel:
+   + Create the apis to hit configure the kong api gateway.
+   
+* Dhanashree
+    + Module integration and end-to-end testing.
+#### 3.  What are the current blockers/challenges the team is facing?
+*  + Module integration and end-to-end testing.
+
+## Week 5 - 60 min
+
+#### 1.  What did the team do the past week?
+
+* Noopur
+   + 
+     
+* Anisha Vaghela:
+   + 
+   
+* Miraj Patel:
+   + Created the apis to hit configure the kong api gateway.
+   + Tested the setup of APIs
+   + Created a docker compose file of the containers for deployment
+   
+* Dhanashree
+   + Setup db with schema for payment, transaction history.
 
 

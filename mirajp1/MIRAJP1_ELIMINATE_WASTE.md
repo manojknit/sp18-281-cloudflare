@@ -15,6 +15,8 @@
 ## Week 4
 + Helped the team decide on what modules to build and test first. This helped us to set a priority list so that major tasks are completed on time and time is left for proper integration.
 
+## Week 5
++ Helped the team to work on integration of the project as well as testing it thoroughly. This reduced the wastage of resources which could be allocated to developing features.
 
 #### References
 [1] [Agile Advice](http://www.agileadvice.com/2005/04/27/scrumxplean/eliminate-waste/)
