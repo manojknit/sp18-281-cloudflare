@@ -15,6 +15,11 @@
 + Added five ec2 nodes for storing module specific data using mongodb.
 + Simplified the creation of nodes by creating a base image and using that to create all the other nodes.
 
+## Week 4
++ Simplified the basic architecture of the project by adding types/ structs in go.
+
+## Week 5
++ Simplified integration testing by defining test scenarios before hand.
 
 #### References
 [Extreme Programming](http://www.extremeprogramming.org/values.html)
