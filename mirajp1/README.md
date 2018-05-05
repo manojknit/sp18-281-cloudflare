@@ -33,5 +33,13 @@ More details in [Kong API Gateway](https://github.com/nguyensjsu/team281-cloudfl
 * Started a new EC2 and installed kong in it.
 * Configured kong to work with the cassandra cluster
 
+## Week 5
+
+### Creating Go API and testing
+
+* Created Go apis for admin module which configures the kong api gateway.
+* Created docker compose file for deployment of containers.
+* Postman collection for the go api to test it.
+
 More details in [Kong Setup](https://github.com/nguyensjsu/team281-cloudflare/blob/master/mirajp1/KongSetup.md)
 

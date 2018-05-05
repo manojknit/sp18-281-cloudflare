@@ -2,11 +2,13 @@ version: "1"
 services:
   reactjs:
     image: vaghelaanisha/frontend-281
+    environment:
+      - KONG_URL=54.183.59.125:8000
     ports:
       - 8080:3000    
     restart: always   
   user-api:
-    image: user-api
+    image: vaghelaanisha//user-api
     ports:
       - 3001:3000
     restart: always
