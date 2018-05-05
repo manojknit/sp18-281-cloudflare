@@ -9,6 +9,7 @@
 * Anisha Vaghela:
 	+ Research on using which NoSQL database in the project.
 	+ Research on advantages and disadvantages of using MongoDB for login/signup system.
+	+ More details on [Login/Signup API - Details](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/LoginSignup.md)
       
 * Miraj Patel:
     + Researched about the Kong API gateway backed by cassandra cluster.
@@ -50,6 +51,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
      
 * Anisha Vaghela:
    + Research on how to deploy the MongoDB database to the cloud.
+   + More details on [Deploy MongoDB to cloud - Details](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/MongoDBtoCloud.md)
    
 * Miraj Patel:
    + Researched about how to deploy the kong Gateway (AWS EC2 or docker)
@@ -87,6 +89,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
      
 * Anisha Vaghela:
    + Check on creation of backend APIs for login/signup in go.
+   + More details on [Research on go API - Details](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/GoAPIStructure.md)
    
 * Miraj Patel:
    + Created basic structure of Goapi for accessing the kong gateway.
@@ -126,6 +129,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
      
 * Anisha Vaghela:
    + Setup of ec2 node and clusters.
+   + More details on [EC2 node cluster creation - Details](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/EC2InstanceClusterforMongoDB.md)
    
 * Miraj Patel:
    + Configured the kong api gateway with the cassandra cluster created in personal project.
@@ -166,6 +170,7 @@ More details in [Project Research](https://github.com/nguyensjsu/team281-cloudfl
    + Created Login and Signup go APIs for the application.
    + Developed UI for the team project application.
    + Integrated frontend and backend by calling of APIs from the front end.
+   + More details on [UI development and go api creation - Details](https://github.com/nguyensjsu/team281-cloudflare/blob/master/vaghelaanisha/UI%26GoLoginSignupAPI.md)
    
 * Miraj Patel:
    + Created the apis to hit configure the kong api gateway.
