@@ -42,6 +42,7 @@ class ViewCart extends Component {
 
     handlePlaceOrder(){
         console.log(this.state);
+        this.history.push('/Checkout?CartId='+this.state.CartId+'&TotalPrice='+this.state.totalPrice);
     }
 
     handleTotalPrice(){
@@ -57,9 +58,6 @@ class ViewCart extends Component {
 
 
     render() {
-
-
-
         return (
             <div className={"container"}>
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/login.css'
 import logo from '../images/logo.png';
+import {doCheckout} from "../API/api";
 
 class Checkout extends Component{
 
@@ -20,6 +21,13 @@ class Checkout extends Component{
 
     handlePay(){
         console.log(this.state);
+        doCheckout(this.state)
+            .then((data)=>{
+                this.history.push('/viewtransaction')
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
     }
 
     handleChange(e){
@@ -38,7 +46,7 @@ class Checkout extends Component{
                         <form onSubmit={this.handlePay}>
 
                             <div className="form-group">
-                                <input type="text" name="cardnumber" required value={this.state.username} onChange={this.handleChange} className="form-control"  placeholder="Card Number *"/>
+                                <input type="text" name="cardnumber" required value={this.state.cardNumber} onChange={this.handleChange} className="form-control"  placeholder="Card Number *"/>
                             </div>
 
                             <div className="form-group">

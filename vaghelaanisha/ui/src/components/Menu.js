@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/project.css';
 import '../css/userBidList.css';
+import {addOrder} from "../API/api";
 
 class Menu extends Component {
 
@@ -41,6 +42,16 @@ class Menu extends Component {
     handleAddCart(e,item){
         e.preventDefault();
         console.log("item:",item);
+
+        addOrder(item)
+            .then((data)=>{
+                // localStorage.setItem("UserId",data.UserId);
+                // this.history.push('/login')
+            })
+            .catch((err)=>{
+                this.setState({error:"There is some error!"})
+                console.log(err);
+            })
     }
 
     render() {

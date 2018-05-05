@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/project.css';
 import '../css/userBidList.css';
+import {getOrder} from "../API/api";
 
 class ViewTransaction extends Component {
 
@@ -34,6 +35,17 @@ class ViewTransaction extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handlePlaceOrder = this.handlePlaceOrder.bind(this);
         this.handleTotalPrice = this.handleTotalPrice.bind(this);
+    }
+
+    componentWillMount(){
+        getOrder()
+            .then((data)=>{
+                this.setState({orders:data})
+            })
+            .catch((err)=>{
+                this.setState({error:"There is some error!"})
+                console.log(err);
+            })
     }
 
     handleChange(e,item){

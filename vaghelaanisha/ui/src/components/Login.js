@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../css/login.css'
 import logo from '../images/logo.png';
 import logo2 from '../images/logo2.png';
+import {doLogin} from "../API/api";
 
 
 class Login extends Component{
@@ -9,8 +10,8 @@ class Login extends Component{
     constructor(){
         super();
         this.state={
-            username:"",
-            password:"",
+            Username:"",
+            Password:"",
             error:""
         };
         this.handleChange =this.handleChange.bind(this);
@@ -22,6 +23,15 @@ class Login extends Component{
     handleUserLogin(e){
         e.preventDefault();
         console.log(this.state);
+        doLogin(this.state)
+            .then((data)=>{
+                localStorage.setItem("UserId",data.UserId);
+                this.history.push('/menu')
+            })
+            .catch((err)=>{
+                this.setState({error:"There is some error!"})
+                console.log(err);
+            })
         // this.props.userLogin(this.state);
     }
 
@@ -57,11 +67,11 @@ class Login extends Component{
                         <form onSubmit={this.handleUserLogin}>
 
                             <div className="form-group">
-                                <input type="text" name="username" onChange={this.handleChange}  value={this.state.username} className="form-control" id="exampleInputEmail1" placeholder="Email or Username"/>
+                                <input type="text" name="Username" onChange={this.handleChange}  value={this.state.Username} className="form-control" id="exampleInputEmail1" placeholder="Email or Username"/>
                             </div>
 
                             <div className="form-group">
-                                <input type="password" name="password" onChange={this.handleChange} value={this.state.password} className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                                <input type="password" name="Password" onChange={this.handleChange} value={this.state.Password} className="form-control" id="exampleInputPassword1" placeholder="Password"/>
                             </div>
 
                             <button type="submit" className="btn btn-block btn-primary">Login</button>

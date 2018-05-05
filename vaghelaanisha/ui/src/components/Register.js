@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 import '../css/login.css'
 import logo from '../images/logo.png';
 import logo2 from '../images/logo2.png';
+import {doSignUp} from "../API/api";
 
 class Register extends Component{
 
     constructor(){
         super();
         this.state={
-            username:"",
-            password:"",
+            Username:"",
+            Password:"",
             confirmPassword:"",
             error:"",
         }
@@ -22,19 +23,27 @@ class Register extends Component{
     handleRegisterUser(e){
         e.preventDefault();
         console.log(this.state);
-        const {password,confirmPassword} = this.state;
-        if(password && confirmPassword && password!==confirmPassword){
+        const {Password,confirmPassword} = this.state;
+        if(Password && confirmPassword && Password!==confirmPassword){
             this.setState({error:"Password and confirm password do not match"});
         }
         else{
             // this.props.userRegistration(this.state);
             this.setState({error:""});
+            doSignUp(this.state)
+                .then((data)=>{
+                    // localStorage.setItem("UserId",data.UserId);
+                    this.history.push('/login')
+                })
+                .catch((err)=>{
+                    this.setState({error:"There is some error!"})
+                    console.log(err);
+                })
         }
 
     }
 
     handleChange(e){
-
         this.setState({[e.target.name]:e.target.value});
     }
 
@@ -62,11 +71,11 @@ class Register extends Component{
                         <form onSubmit={this.handleRegisterUser}>
 
                             <div className="form-group">
-                                <input type="text" name="username" required value={this.state.username} onChange={this.handleChange} className="form-control"  placeholder="Username *"/>
+                                <input type="text" name="Username" required value={this.state.Username} onChange={this.handleChange} className="form-control"  placeholder="Username *"/>
                             </div>
 
                             <div className="form-group">
-                                <input type="password" name="password" required onChange={this.handleChange} value={this.state.password} className="form-control" placeholder="Password *"/>
+                                <input type="password" name="Password" required onChange={this.handleChange} value={this.state.Password} className="form-control" placeholder="Password *"/>
                             </div>
 
                             <div className="form-group">
